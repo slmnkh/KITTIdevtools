@@ -1,15 +1,21 @@
-function pose = computePose_salman(base_dir)
+function pose = computePose_salman(base_dir, outputFormat)
 % KITTI RAW DATA DEVELOPMENT KIT
-% 
+%
 % Written by Salman
 
 % clear and close everything
-clear all; close all; dbstop error; clc;
-disp('======= KITTI DevKit Demo =======');
+% clear all; close all; dbstop error; clc;
+% disp('======= KITTI DevKit Demo =======');
+
+if nargin < 2
+    
+    outputFormat = 1;
+    
+end
 
 % sequence base directory
 if nargin<1
-  base_dir = '/home/skhokhar/Desktop/KITTITesting/2011_09_26/2011_09_26_drive_0001_sync';
+  base_dir = '/home/skhokhar/Desktop/KITTITesting/2011_09_26/2011_09_26_drive_0001_sync/';
 end
 
 % load oxts data
@@ -28,18 +34,29 @@ for i = 1:length(oxts)
     
 end
 
+
+if outputformat = 1
+    
+    temp = pose;
+    
+    for i = 1:length(temp
+
 end
 
-function GISpose = convertBearingToGIS(inPose)
+function GISpose = convertBearingToGIS(inPose) % refer to inPose and GISpose formats above
 
-    if inPose >= 0 && inPose <= pi/2
+    if inPose >= 0 && inPose <= pi/2 % quadrant 1
         
         GISpose = pi/2 - inPose;
         
-    elseif inPose >= 0
+    elseif inPose >= 0 % quadrant 2
         
         GISpose = 2*pi - (inPose - pi/2);
         
-    else
+    else % quadrants 3 and 4
         
-        GISpose = -1*inPose + 
+        GISpose = -1*inPose + pi/2;
+        
+    end
+    
+end

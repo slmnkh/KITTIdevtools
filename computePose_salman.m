@@ -1,15 +1,21 @@
-function pose = computePose_salman(base_dir)
+function pose = computePose_salman(base_dir, outputFormat)
 % KITTI RAW DATA DEVELOPMENT KIT
-% 
+%
 % Written by Salman
 
 % clear and close everything
-clear all; close all; dbstop error; clc;
-disp('======= KITTI DevKit Demo =======');
+% clear all; close all; dbstop error; clc;
+% disp('======= KITTI DevKit Demo =======');
+
+if nargin < 2
+    
+    outputFormat = 1;
+    
+end
 
 % sequence base directory
 if nargin<1
-  base_dir = '/home/skhokhar/Desktop/KITTITesting/2011_09_26/2011_09_26_drive_0001_sync';
+  base_dir = '/home/skhokhar/Desktop/KITTITesting/2011_09_26/2011_09_26_drive_0001_sync/';
 end
 
 % load oxts data
@@ -26,6 +32,16 @@ for i = 1:length(oxts)
     pose{i}.GISbearing = convertBearingToGIS(oxts{i}(6));% bearing definition as defined here: http://www.movable-type.co.uk/scripts/latlong.html
     % GIS bearing: measured in radians, clockwise from north
     
+end
+
+
+if outputFormat == 1
+    
+    temp = pose;
+    pose = [];
+    for i = 1:length(temp)
+        pose = [pose; [temp{i}.long temp{i}.lat temp{i}.alt temp{i}.bearing temp{i}.GISbearing]];
+    end
 end
 
 end

@@ -42,10 +42,13 @@ disp('======= KITTI DevKit Demo =======');
 %   - 2 = left color
 %   - 3 = right color
 if nargin<1
-  base_dir  = '/home/skhokhar/Desktop/KITTITesting/2011_09_26/2011_09_26_drive_0001_sync';
+  base_dir  = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/synced/2011_09_26_drive_0001_sync';
 end
 if nargin<2
-  calib_dir = '/home/skhokhar/Desktop/KITTITesting/2011_09_26/';
+  calib_dir = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/calib/2011_09_26_calib/2011_09_26';
+end
+if nargin<3
+  tracklet_dir = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/tracklets/2011_09_26_drive_0001_tracklets/2011_09_26/2011_09_26_drive_0001_sync';
 end
 cam       = 2; % 0-based index
 
@@ -62,7 +65,7 @@ gh = visualization('init',image_dir);
 [veloToCam, K] = loadCalibration(calib_dir);
 
 % read tracklets for the selected sequence
-tracklets = readTrackletsMex([base_dir '/tracklet_labels.xml']);
+tracklets = readTrackletsMex([tracklet_dir '/tracklet_labels.xml']);
 
 % extract tracklets
 % LOCAL OBJECT COORDINATE SYSTEM:

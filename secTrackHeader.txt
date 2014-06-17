@@ -1,0 +1,9 @@
+<Placemark>
+      <name>Absolute Extruded</name>
+      <description>Tracked vehicle track data</description>
+      <styleUrl>#secondaryTrackTrack</styleUrl>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>1</tessellate>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>  

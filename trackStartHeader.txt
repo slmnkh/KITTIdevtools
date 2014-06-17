@@ -1,0 +1,5 @@
+<Placemark>
+<styleUrl>#trackStart</styleUrl>
+<gx:drawOrder>1</gx:drawOrder>
+<Point>
+        <coordinates>  

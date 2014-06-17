@@ -3,7 +3,7 @@ function makeKml(path)
 %input:  name of track, one matrix containing latitude and longitude
 %usage:  pwr_kml('track5',latlon)
 if nargin < 1 
-    path = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/synced/2011_09_26_drive_0001_sync/';
+    path = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/synced/2011_09_26_drive_0017_sync/';
 end
 
 system(['sudo touch ' path '/gpsTracks.kml']);

@@ -1,0 +1,15 @@
+function plotMultipleGPSTrackFiles(varargin)
+
+for i = 1:length(varargin)
+    
+    if i == 1
+        
+        addMainKML(varargin(1));
+        
+    else
+        
+        addKML(varargin(i));
+        
+    end
+    
+end

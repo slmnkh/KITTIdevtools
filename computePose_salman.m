@@ -14,9 +14,9 @@ if nargin < 2
 end
 
 % sequence base directory
-if nargin<1
-  base_dir = '/home/skhokhar/Desktop/KITTITesting/2011_09_26/2011_09_26_drive_0001_sync/';
-end
+% if nargin<1
+%   base_dir = '/home/skhokhar/Desktop/KITTITesting/2011_09_26/2011_09_26_drive_0001_sync/';
+% end
 
 % load oxts data
 oxts = loadOxtsliteData(base_dir);

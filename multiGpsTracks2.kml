@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<kml xmlns="http://www.opengis.net/kml/2.2">
+
+  <Document>
+
+    <name>Paths</name>
+
+    <description>GPS tracks from KITTI data.</description>
+
+    <Style id="mainTrack">
+      <LineStyle>
+        <color>7f0000ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7f00ff00</color>
+      </PolyStyle>
+    </Style>
+
+    <Style id="secondaryTrackTrack">
+      <LineStyle>
+        <color>7fff0000</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7f00ff00</color>
+      </PolyStyle>
+    </Style>
+
+    <Style id="trackStart">
+      <IconStyle>
+			<color>ff00ff00</color>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+    </Style>
+
+    <Style id="trackEnd">
+      <IconStyle>
+			<color>ff00ffff</color>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+    </Style>
+
+<Placemark>
+      <name>Absolute Extruded</name>
+      <description>Ego vehicle track data</description>
+      <styleUrl>#mainTrack</styleUrl>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>1</tessellate>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>  -122.05294457,37.39836620,10
+-122.05294938,37.39835334,10
+-122.05295419,37.39834050,10
+-122.05295899,37.39832768,10
+-122.05296377,37.39831488,10
+-122.05296857,37.39830208,10
+-122.05297339,37.39828927,10
+-122.05297817,37.39827644,10
+-122.05298291,37.39826360,10
+-122.05298763,37.39825078,10
+-122.05299234,37.39823797,10
+-122.05299706,37.39822520,10
+-122.05300175,37.39821243,10
+-122.05300643,37.39819967,10
+-122.05301110,37.39818694,10
+-122.05301573,37.39817425,10
+-122.05302034,37.39816160,10
+-122.05302495,37.39814896,10
+-122.05302956,37.39813635,10
+-122.05303416,37.39812378,10
+-122.05303876,37.39811129,10
+-122.05304334,37.39809884,10
+-122.05304789,37.39808641,10
+-122.05305244,37.39807405,10
+
+
+      
+
+        </coordinates>  
+
+    </LineString>
+
+</Placemark>
+<Placemark>
+<styleUrl>#trackStart</styleUrl>
+<gx:drawOrder>1</gx:drawOrder>
+<Point>
+        <coordinates>  -122.05294457,37.39836620,10
+-122.05294938,37.39835334,10
+-122.05295419,37.39834050,10
+-122.05295899,37.39832768,10
+-122.05296377,37.39831488,10
+-122.05296857,37.39830208,10
+-122.05297339,37.39828927,10
+-122.05297817,37.39827644,10
+-122.05298291,37.39826360,10
+-122.05298763,37.39825078,10
+-122.05299234,37.39823797,10
+-122.05299706,37.39822520,10
+-122.05300175,37.39821243,10
+-122.05300643,37.39819967,10
+-122.05301110,37.39818694,10
+-122.05301573,37.39817425,10
+-122.05302034,37.39816160,10
+-122.05302495,37.39814896,10
+-122.05302956,37.39813635,10
+-122.05303416,37.39812378,10
+-122.05303876,37.39811129,10
+-122.05304334,37.39809884,10
+-122.05304789,37.39808641,10
+-122.05305244,37.39807405,10
+</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<styleUrl>#trackEnd</styleUrl>
+<gx:drawOrder>1</gx:drawOrder>
+<Point>
+        <coordinates>  -122.05305244,37.39807405,10
+</coordinates>
+</Point>
+</Placemark>
+  </Document>
+</kml>

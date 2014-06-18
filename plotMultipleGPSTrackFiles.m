@@ -1,5 +1,8 @@
 function plotMultipleGPSTrackFiles(varargin)
 
+%% inputs expected: varargin{1} = main track file path
+%% varargin{2} onwards, secondary track file paths
+
 delete('trackData.txt');
 delete('multiGpsTracks.kml');
 fid = fopen('trackData.txt','a+');

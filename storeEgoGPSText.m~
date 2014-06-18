@@ -1,4 +1,5 @@
-%% this code checks which drives have tracklet annotations available, and for only those folders in sync, saves a kml file for the ego vehicle track
+
+% sample path: /home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/synced/2011_09_26_drive_0001_sync
 
 trackletPath = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/tracklets/';
 gpsDataPath = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/synced/';
@@ -10,7 +11,9 @@ end
 for iFile = 1:length(drivesWithTracklets)
     
     path = [gpsDataPath drivesWithTracklets(iFile).name(1:end-9) 'sync/'];
-    makeKml(path);
+    temp = getGpsTrack(path);
     iFile
+    
+    temp_txt = [base_dir 'trackletGPSFiles/txt/tracklet' sprintf('%.03d.txt',i)];
 
 end

@@ -1,9 +1,16 @@
 
-function saveTrackletsinGPScoords(in_dir)
+function saveTrackletsinGPScoords(folder_name, in_dir)
+
+if nargin < 2
+    
+    in_dir = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/';
+    
+end
 
 % in_dir = '/home/skhokhar/common/people/skhokhar/KITTI/unzipped/cityUnzipped/';
-base_dir = [in_dir 'synced/2011_09_26_drive_0001_sync/'];
-tracklet_dir = [in_dir 'tracklets/2011_09_26_drive_0001_tracklets/2011_09_26/2011_09_26_drive_0001_sync'];
+% expected folder name format: 2011_09_26_drive_0001_
+base_dir = [in_dir 'synced/' folder_name 'sync/'];
+tracklet_dir = [in_dir 'tracklets/' folder_name 'tracklets/' folder_name(1:10) '/' folder_name 'sync'];
 
 gpsEgo = computePose_salman(base_dir); % ego vehicles data (long, lat, alt, bearing, bearing in GIS standard)
 
@@ -67,7 +74,7 @@ for i = 1:length(tracklets)
     temp_kml = [base_dir 'trackletGPSFiles/kml/tracklet' sprintf('%.03d.kml',i)];
     
 %     system(['sudo touch ' temp_txt]);
-    fid = fopen('coords.txt', 'w');
+    fid = fopen('coords.txt', 'w+');
     fprintf(fid, '%.20f,%.20f,%.20f\n', tracklets{i}.gpsTrack);
     fclose(fid);
     
